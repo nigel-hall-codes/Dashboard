@@ -35,7 +35,7 @@ BotApp.controller('BotAppCtrl', ['$scope', function($scope) {
                         $scope.$apply()
                     }
                 };
-                xhr.open('POST', "http://127.0.0.1:8000" + '/api/botstats/', true);
+                xhr.open('POST', "http://69.48.212.237" + '/api/botstats/', true);
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.send(JSON.stringify({'timeperiod': $scope.timeperiod}))
             }
