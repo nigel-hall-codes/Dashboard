@@ -127,7 +127,7 @@ PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'assets'), (PROJECT_ROOT, 'static'), '/home/nhall/DashboardEnv2/Dashboard/assets/')
+    os.path.join(PROJECT_ROOT, 'assets'), (PROJECT_ROOT, 'static/'), '/home/nhall/DashboardEnv2/Dashboard/assets/')
 
 # STATICFILES_DIRS = (
 #   os.path.join(BASE_DIR, 'static/'),
