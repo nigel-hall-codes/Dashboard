@@ -123,14 +123,19 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-
+# this defines the url for static files
+# eg: base-url.com/static/your-js-file.js
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'assets'), (PROJECT_ROOT, 'static/'), '/home/nhall/DashboardEnv2/Dashboard/assets/')
+# this is directory name where collectstatic files command will put your app level static files
+STATIC_ROOT = 'staticfiles'
 
-# STATICFILES_DIRS = (
-#   os.path.join(BASE_DIR, 'static/'),
-# )
+# this is directory paths where you have to put your project level static files
+# you can put multiple folders here
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+
 
 CORS_ORIGIN_ALLOW_ALL = True
