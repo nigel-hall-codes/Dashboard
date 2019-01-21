@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'botstats',
+    'rest_framework',
+    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -117,4 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
+ROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
+print(PROJECT_ROOT)
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'assets'), (PROJECT_ROOT, 'static'))
+
+CORS_ORIGIN_ALLOW_ALL = True

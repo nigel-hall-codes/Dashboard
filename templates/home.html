@@ -1,0 +1,68 @@
+{% load static from staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="{% static 'js/home.js' %}"></script>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>First page</title>
+</head>
+{% verbatim %}
+<body class="container" ng-app="BotApp" ng-controller="BotAppCtrl">
+<div class="row">
+<div class="container" id="BotStatsBox">
+  <div class="dropdown float-right row">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{ timeperiod }}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" ng-click="test($event)">Day</a>
+    <a class="dropdown-item" ng-click="test($event)">Week</a>
+    <a class="dropdown-item" ng-click="test($event)">Month</a>
+    <a class="dropdown-item" ng-click="test($event)">Year</a>
+    <a class="dropdown-item" ng-click="test($event)">All Time</a>
+  </div>
+</div>
+  <div class="accordion row" style="width: 100%; height: 40vh" id="accordionExample">
+    <div class="card" style="width: 100%" ng-repeat="bot in bot_stats">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="{{'#collapse' + bot.bot_name[0]}}" aria-expanded="true" aria-controls="{{'collapse' + bot.bot_name[0]}}">
+            {{bot.bot}}
+          </button>
+        </h2>
+      </div>
+      <div id="{{'collapse' + bot.bot_name[0]}}" class="collapse show container" aria-labelledby="headingOne" data-parent="#accordionExample" style="height: 50%">
+        <div class="card-body row" style="overflow: auto">
+          <div class="ReturnBox col-sm">Average Return: {{bot.average_return}}</div>
+          <div class="TradeFrequencyBox col-sm">Number of Trades: {{bot.total_trades}}</div>
+          <div class="Trade Size Box col-sm"> Average Trade Size: ${{bot.trade_size}}</div>
+          <div class="TotalReturnBox col-sm"> Total Return: {{bot.total_return}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+  <!--<div class="col-6 border bg-light"  id="portfolio">Hi</div>-->
+  <!--<div class="col-6 border bg-light" id="performance-chart">He</div>-->
+
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+{% endverbatim %}
+
+
+</html>
