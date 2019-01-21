@@ -134,7 +134,7 @@ STATIC_ROOT = 'staticfiles'
 # you can put multiple folders here
 STATICFILES_DIRS = (
     # os.path.join(BASE_DIR, "static"),
-    "/home/nhall/DashboardEnv2/Dashboard/static/"
+    "/home/nhall/DashboardEnv2/Dashboard/staticfiles/"
 )
 
 
